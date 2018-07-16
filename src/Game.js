@@ -14,6 +14,8 @@ class Game extends Component {
   componentWillMount() {
     this.initGame();
   }
+  
+  // Function to start game
 
   initGame() {
     this.memoryCards.generateCardSet();
@@ -26,6 +28,8 @@ class Game extends Component {
     });
   }
 
+  // Function to open card and check if match or not
+  
   getCardViews() {
     let cardViews = [];
     let onClick = this.onCardClicked;
@@ -41,6 +45,8 @@ class Game extends Component {
     return cardViews;
   }
 
+  // Function to flip back the open cards if it doesn't match
+  
   clearCards(id1,id2) {
     if (this.state.numClicksWithinTurn !== 2) {
       return;
@@ -55,6 +61,8 @@ class Game extends Component {
     });
   }
 
+  // Function to check, clicked card in pair of two matches or not wih its id and image
+  
   onCardClicked(id,image) {
     if (this.state.numClicksWithinTurn === 0 || this.state.numClicksWithinTurn === 2) {
       if (this.state.numClicksWithinTurn === 2) {
@@ -92,6 +100,8 @@ class Game extends Component {
 
     }
   }
+  
+  // Function for playing again if you matched all cards correct
 
   onPlayAgain() {
     this.initGame();
