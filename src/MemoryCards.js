@@ -1,5 +1,7 @@
 import shuffle from 'shuffle-array';
 
+//Shuffle function
+
 class MemoryCards {
   constructor() {
     this.cards = [];
